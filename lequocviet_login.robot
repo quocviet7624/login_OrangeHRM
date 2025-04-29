@@ -31,9 +31,10 @@ Mở trình duyệt
 
 Đăng nhập
     [Arguments]    ${user}    ${pass}
-    Input Text    name:username    ${user}
-    Input Text    name:password    ${pass}
-    Click Button  xpath://button[@type="submit"]
+    Wait Until Element Is Visible    xpath://input[@name="username"]    10s
+    Input Text     xpath://input[@name="username"]    ${user}
+    Input Text     xpath://input[@name="password"]    ${pass}
+    Click Button   xpath://button[@type="submit"]
 
 Kiểm tra đăng nhập thành công
     Wait Until Page Contains Element    xpath://*[@class="oxd-userdropdown-name"]    10s
